@@ -77,7 +77,7 @@ export abstract class SQLitePreparedQuery<T extends PreparedQueryConfig> impleme
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -86,7 +86,7 @@ export abstract class SQLitePreparedQuery<T extends PreparedQueryConfig> impleme
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -104,7 +104,7 @@ export abstract class SQLitePreparedQuery<T extends PreparedQueryConfig> impleme
 				]);
 				return res;
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -113,7 +113,7 @@ export abstract class SQLitePreparedQuery<T extends PreparedQueryConfig> impleme
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -129,7 +129,7 @@ export abstract class SQLitePreparedQuery<T extends PreparedQueryConfig> impleme
 				try {
 					result = await query();
 				} catch (e) {
-					throw new DrizzleQueryError(queryString, params, e as Error);
+					throw DrizzleQueryError.from(queryString, params, e);
 				}
 
 				// put actual key
@@ -150,7 +150,7 @@ export abstract class SQLitePreparedQuery<T extends PreparedQueryConfig> impleme
 		try {
 			return await query();
 		} catch (e) {
-			throw new DrizzleQueryError(queryString, params, e as Error);
+			throw DrizzleQueryError.from(queryString, params, e);
 		}
 	}
 

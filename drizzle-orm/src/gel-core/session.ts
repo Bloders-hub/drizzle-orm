@@ -48,7 +48,7 @@ export abstract class GelPreparedQuery<T extends PreparedQueryConfig> implements
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -57,7 +57,7 @@ export abstract class GelPreparedQuery<T extends PreparedQueryConfig> implements
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -75,7 +75,7 @@ export abstract class GelPreparedQuery<T extends PreparedQueryConfig> implements
 				]);
 				return res;
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -84,7 +84,7 @@ export abstract class GelPreparedQuery<T extends PreparedQueryConfig> implements
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -100,7 +100,7 @@ export abstract class GelPreparedQuery<T extends PreparedQueryConfig> implements
 				try {
 					result = await query();
 				} catch (e) {
-					throw new DrizzleQueryError(queryString, params, e as Error);
+					throw DrizzleQueryError.from(queryString, params, e);
 				}
 
 				// put actual key
@@ -121,7 +121,7 @@ export abstract class GelPreparedQuery<T extends PreparedQueryConfig> implements
 		try {
 			return await query();
 		} catch (e) {
-			throw new DrizzleQueryError(queryString, params, e as Error);
+			throw DrizzleQueryError.from(queryString, params, e);
 		}
 	}
 

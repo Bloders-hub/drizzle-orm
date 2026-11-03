@@ -70,7 +70,7 @@ export abstract class PgPreparedQuery<T extends PreparedQueryConfig> implements 
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -79,7 +79,7 @@ export abstract class PgPreparedQuery<T extends PreparedQueryConfig> implements 
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -97,7 +97,7 @@ export abstract class PgPreparedQuery<T extends PreparedQueryConfig> implements 
 				]);
 				return res;
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -106,7 +106,7 @@ export abstract class PgPreparedQuery<T extends PreparedQueryConfig> implements 
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -122,7 +122,7 @@ export abstract class PgPreparedQuery<T extends PreparedQueryConfig> implements 
 				try {
 					result = await query();
 				} catch (e) {
-					throw new DrizzleQueryError(queryString, params, e as Error);
+					throw DrizzleQueryError.from(queryString, params, e);
 				}
 				// put actual key
 				await this.cache.put(
@@ -142,7 +142,7 @@ export abstract class PgPreparedQuery<T extends PreparedQueryConfig> implements 
 		try {
 			return await query();
 		} catch (e) {
-			throw new DrizzleQueryError(queryString, params, e as Error);
+			throw DrizzleQueryError.from(queryString, params, e);
 		}
 	}
 

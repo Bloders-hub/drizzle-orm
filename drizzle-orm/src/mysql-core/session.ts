@@ -76,7 +76,7 @@ export abstract class MySqlPreparedQuery<T extends MySqlPreparedQueryConfig> {
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -85,7 +85,7 @@ export abstract class MySqlPreparedQuery<T extends MySqlPreparedQueryConfig> {
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -103,7 +103,7 @@ export abstract class MySqlPreparedQuery<T extends MySqlPreparedQueryConfig> {
 				]);
 				return res;
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -112,7 +112,7 @@ export abstract class MySqlPreparedQuery<T extends MySqlPreparedQueryConfig> {
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -128,7 +128,7 @@ export abstract class MySqlPreparedQuery<T extends MySqlPreparedQueryConfig> {
 				try {
 					result = await query();
 				} catch (e) {
-					throw new DrizzleQueryError(queryString, params, e as Error);
+					throw DrizzleQueryError.from(queryString, params, e);
 				}
 
 				// put actual key
@@ -149,7 +149,7 @@ export abstract class MySqlPreparedQuery<T extends MySqlPreparedQueryConfig> {
 		try {
 			return await query();
 		} catch (e) {
-			throw new DrizzleQueryError(queryString, params, e as Error);
+			throw DrizzleQueryError.from(queryString, params, e);
 		}
 	}
 

@@ -74,7 +74,7 @@ export abstract class SingleStorePreparedQuery<T extends SingleStorePreparedQuer
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -83,7 +83,7 @@ export abstract class SingleStorePreparedQuery<T extends SingleStorePreparedQuer
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -101,7 +101,7 @@ export abstract class SingleStorePreparedQuery<T extends SingleStorePreparedQuer
 				]);
 				return res;
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -110,7 +110,7 @@ export abstract class SingleStorePreparedQuery<T extends SingleStorePreparedQuer
 			try {
 				return await query();
 			} catch (e) {
-				throw new DrizzleQueryError(queryString, params, e as Error);
+				throw DrizzleQueryError.from(queryString, params, e);
 			}
 		}
 
@@ -126,7 +126,7 @@ export abstract class SingleStorePreparedQuery<T extends SingleStorePreparedQuer
 				try {
 					result = await query();
 				} catch (e) {
-					throw new DrizzleQueryError(queryString, params, e as Error);
+					throw DrizzleQueryError.from(queryString, params, e);
 				}
 
 				// put actual key
@@ -147,7 +147,7 @@ export abstract class SingleStorePreparedQuery<T extends SingleStorePreparedQuer
 		try {
 			return await query();
 		} catch (e) {
-			throw new DrizzleQueryError(queryString, params, e as Error);
+			throw DrizzleQueryError.from(queryString, params, e);
 		}
 	}
 
